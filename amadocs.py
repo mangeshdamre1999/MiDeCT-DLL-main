@@ -7,8 +7,8 @@ import faiss
 from sentence_transformers import SentenceTransformer, util
 
 # Set your API Keys (Replace with your actual keys)
-GOOGLE_FACT_CHECK_API_KEY = "AIzaSyAYlncuOAOVn0Cuw0CMWqVVHI7_vc7MAzc"
-TELEGRAM_BOT_TOKEN = "7241148778:AAFMMeq-CiCgRzep2kc-dJKuBeLBztABHXE"
+GOOGLE_FACT_CHECK_API_KEY = "your key"
+TELEGRAM_BOT_TOKEN = "your key"
 
 # Initialize Telegram bot
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
