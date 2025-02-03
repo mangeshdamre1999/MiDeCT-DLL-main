@@ -1,4 +1,19 @@
-!pip install faiss-cpu sentence-transformers pyTelegramBotAPI
+import os
+import sys
+import subprocess
+
+# Function to install required packages
+def install_packages():
+    required_packages = ["faiss-cpu", "sentence-transformers", "pyTelegramBotAPI", "numpy", "requests"]
+    for package in required_packages:
+        try:
+            __import__(package.replace("-", "_"))  # Check if package is installed
+        except ImportError:
+            print(f"Installing {package}...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Install dependencies before importing modules
+install_packages()
 
 import requests
 import json
@@ -7,8 +22,8 @@ import faiss
 from sentence_transformers import SentenceTransformer, util
 
 # Set your API Keys (Replace with your actual keys)
-GOOGLE_FACT_CHECK_API_KEY = "your key"
-TELEGRAM_BOT_TOKEN = "your key"
+GOOGLE_FACT_CHECK_API_KEY = "AIzaSyAYlncuOAOVn0Cuw0CMWqVVHI7_vc7MAzc"
+TELEGRAM_BOT_TOKEN = "7241148778:AAFMMeq-CiCgRzep2kc-dJKuBeLBztABHXE"
 
 # Initialize Telegram bot
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
